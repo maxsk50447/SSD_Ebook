@@ -4,24 +4,11 @@
     android:layout_height="match_parent"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
+    android:background="@color/colorWhite"
     android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/searchLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" >
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text = "Search"
-            android:onClick="onSearch"/>
-        <EditText
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -29,17 +16,38 @@
 
         <Spinner
             android:id="@+id/spin"
-            android:layout_width="150dp"
+            android:layout_width="88dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.63"></Spinner>
+            android:layout_weight="0.11"></Spinner>
+
+        <EditText
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.89" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:onClick="onSearch"
+            android:text="Search" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:weightSum="1">
+
 
         <Button
             android:id="@+id/profileButton"
-            android:layout_width="135dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0.44"
             android:onClick="onUser"
-            android:text="User"
-            android:layout_weight="0.44" />
+            android:text="My Backpack" />
 
     </LinearLayout>
 
