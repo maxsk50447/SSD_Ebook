@@ -13,7 +13,7 @@ import java.util.Observer;
  */
 
 public class BookPresenter implements Observer{
-    RemoteBookStack repo;
+    RemoteBookStack repository;
     private BookView view;
     User user;
 
@@ -23,14 +23,14 @@ public class BookPresenter implements Observer{
     }
 
     public void listAllBook(){
-        repo = new RemoteBookStack();
-        repo.addObserver(this);
-        repo.fetchAllBooks();
+        repository = RemoteBookStack.getInstance();
+        repository.addObserver(this);
+        repository.fetchAllBooks();
     }
 
     @Override
     public void update(Observable o, Object arg) {
-        List<Book> books = repo.getAllBooks();
+        List<Book> books = repository.getAllBooks();
         view.setBookResult(books);
 
     }
@@ -64,7 +64,7 @@ public class BookPresenter implements Observer{
 
     }
     public void search(String text,String state) {
-        List<Book> books = repo.getBooks(text);
+        List<Book> books = repository.getBooks(text);
         books = sort(books, state);
         view.setBookResult(books);
     }
@@ -79,7 +79,7 @@ public class BookPresenter implements Observer{
 
 
     public void addToCart(int position) {
-        user.addToOrder(repo.getBookById(position));
+        user.addToOrder(repository.getBookById(position));
     }
 }
 

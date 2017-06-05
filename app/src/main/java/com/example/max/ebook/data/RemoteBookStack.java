@@ -26,7 +26,7 @@ public class RemoteBookStack extends BookStack {
         return instance;
     }
 
-    public RemoteBookStack() {
+    private RemoteBookStack() {
         books = new ArrayList<Book>();
     }
 
